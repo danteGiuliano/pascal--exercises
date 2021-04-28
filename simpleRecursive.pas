@@ -2,19 +2,19 @@ program simpleRecursive;
 (*this algorimt convert a integer number , to binary number with recursion*)
 Uses sysutils; {import a intToStr}
 
-{A simple fuction recursive }
+{A simple function recursive }
 function numberToBinary( number:integer ):String;
 
 var residue:String;call:String;division:integer;
 
 begin
-    residue:='0'; {case base }
+    residue:='1'; {case base }
     division:=number div 2; { base binary }
     if(not(division <= 0))then
     begin
         residue := IntToStr((number mod 2));
         call :=numberToBinary(division);
-        numberToBinary:=Concat(residue,call);
+        numberToBinary:=Concat(call,residue);
     end
     else
         numberToBinary:=residue;
